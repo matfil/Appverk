@@ -26,14 +26,14 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it ('should fetch user',()=>{
+  it('should fetch user', () => {
     const mockData = {
-      "name":"Mateusz Filipiuk",
+      "name": "Mateusz Filipiuk",
       "age": 34,
       "city": "Warsaw",
       "country": "Poland",
-      "photo":"assets/img/user.jpg"
-  };
+      "photo": "assets/img/user.jpg"
+    };
     const req = httpTestingController.expectOne('assets/user.json');
     expect(req.request.method).toEqual('GET');
     req.flush(mockData);

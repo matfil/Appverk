@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { authGuard, loginGuard } from './auth.guard';
 
 export const routes: Routes = [
-    {path:'',component:WelcomeComponent},
-    {path:'login', component:LoginComponent, canActivate: [loginGuard]},
-    {path:'home', component:HomeComponent, canActivate: [authGuard]}
+    { path: '', component: WelcomeComponent },
+    { path: 'login', component: LoginComponent, canActivate: [loginGuard] },
+    { path: 'home', component: HomeComponent, canActivate: [authGuard] }
 ];

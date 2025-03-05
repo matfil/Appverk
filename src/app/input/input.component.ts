@@ -28,5 +28,5 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() type: 'text' | 'password' | 'email' | 'number' = 'text';
   @Input() formControl: FormControl = new FormControl();
-  
+
 }

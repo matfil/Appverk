@@ -21,7 +21,7 @@ export class LoginComponent {
     }
   );
 
-  constructor(private fb: FormBuilder, private router:Router) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   getControl(name: string): FormControl {
     return this.form.get(name) as FormControl;

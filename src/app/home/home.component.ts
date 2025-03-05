@@ -12,15 +12,15 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  user:UserModel = new UserModel();
-  subscription?:Subscription;
+  user: UserModel = new UserModel();
+  subscription?: Subscription;
 
-  constructor(private userService:UserService) { }
-  
+  constructor(private userService: UserService) { }
+
   ngOnInit(): void {
     this.subscription = this.userService.getUser().subscribe(user => this.user = user);
   }
-  
+
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }

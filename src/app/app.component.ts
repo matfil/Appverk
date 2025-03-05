@@ -10,13 +10,13 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
-  logout(){
+  logout() {
     window.localStorage.removeItem('token');
     this.router.navigate(['/']);
   }
-  loggedIn(){
+  loggedIn() {
     return window.localStorage.getItem('token');
   }
 }
