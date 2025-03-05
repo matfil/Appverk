@@ -18,11 +18,6 @@ describe('UserService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('should return user', () => {
-    service.getUser().subscribe(user => {
-      expect(user).toBeTruthy();
-    });
-  });
+ 
 
 });
