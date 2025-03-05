@@ -1,0 +1,5 @@
+<fieldset class="rounded">
+    <legend> {{placeholder}} </legend>
+    <input [placeholder]="placeholder" [type]="type" [formControl]="formControl">
+</fieldset>
+<div *ngIf="formControl.pristine === false && formControl.valid === false" class="invalid">This field is invalid</div>

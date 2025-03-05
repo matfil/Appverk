@@ -1,11 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppComponent, RouterModule.forRoot([])],
     }).compileComponents();
+    window.localStorage.removeItem('token');//to be sure that token is not set
+    window.localStorage.setItem('token', 'test123');
   });
 
   it('should create the app', () => {
@@ -14,16 +17,17 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Appverk' title`, () => {
+  it('should handle logout', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Appverk');
+    app.logout();
+    expect(app.loggedIn()).toBeNull();
   });
 
-  it('should render title', () => {
+  it('should render logout button', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Appverk');
+    expect(compiled.querySelector('button')?.textContent).toContain('Logout');
   });
 });

@@ -1,0 +1,9 @@
+<div class="card">
+    <p>Login works!</p>
+    <app-input type="email" placeholder="e-mail" [formControl]="getControl('email')"></app-input>
+    <app-input type="password" placeholder="password" [formControl]="getControl('password')"></app-input>
+    <div class="actions">
+        <button (click)="onSubmit()" class="button">Login</button>
+    </div>
+
+</div>

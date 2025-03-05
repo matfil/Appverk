@@ -1,13 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Appverk';
+constructor(private router:Router) { }
+
+  logout(){
+    window.localStorage.removeItem('token');
+    this.router.navigate(['/']);
+  }
+  loggedIn(){
+    return window.localStorage.getItem('token');
+  }
 }
