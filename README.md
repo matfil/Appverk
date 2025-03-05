@@ -1,8 +1,11 @@
 # Appverk
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+
 You can log in with 
+
 email: praca@appwerk.com
+
 pass: recruitment
 
 ## Development server
