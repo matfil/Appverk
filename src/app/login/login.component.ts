@@ -36,7 +36,10 @@ export class LoginComponent {
         console.log('Login successful');
         this.router.navigate(['/home']);
       }
+      alert('Invalid credentials');
+      return;
     }
+    console.log('Invalid form');
   }
 
   generateRandomString(length: number): string {
